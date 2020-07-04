@@ -1,8 +1,9 @@
+import 'package:expensee/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Login_Screen extends StatelessWidget {
-  Login_Screen({
+class login_screen extends StatelessWidget {
+  login_screen({
     Key key,
   }) : super(key: key);
   @override
@@ -36,23 +37,6 @@ class Login_Screen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(297.0, 72.0),
-            child:
-                // Adobe XD layer: 'Sign Up' (text)
-                SizedBox(
-              width: 50.0,
-              child: Text(
-                'Sign Up',
-                style: TextStyle(
-                  fontFamily: 'GT Walsheim Pro',
-                  fontSize: 12,
-                  color: const Color(0xffff3378),
-                ),
-                textAlign: TextAlign.right,
-              ),
-            ),
-          ),
-          Transform.translate(
             offset: Offset(30.0, 65.85),
             child:
                 // Adobe XD layer: 'Budget tracker' (text)
@@ -70,29 +54,62 @@ class Login_Screen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(21.0, 14.33),
+            offset: Offset(265.0, 55),
             child:
-                // Adobe XD layer: 'Bars / Status Bar /…' (component)
-                Container(),
+                // Adobe XD layer: 'Sign Up' (text)
+                SizedBox(
+              width: 100.0,
+              child: FlatButton(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    fontFamily: 'GT Walsheim Pro',
+                    fontSize: 12,
+                    color: const Color(0xffff3378),
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+                onPressed: () {
+                  print("Sign Up");
+                },
+              ),
+            ),
           ),
           Transform.translate(
-            offset: Offset(36.0, 437.0),
+            offset: Offset(21.0, 14.33),
+            child: Container(),
+          ),
+          Transform.translate(
+            offset: Offset(36.0, 360.0),
             child:
-                // Adobe XD layer: 'Group 5' (group)
-                Stack(
+                // Adobe XD layer: 'Login to your accoun' (text)
+                Text(
+              'Login to your account',
+              style: TextStyle(
+                fontFamily: 'GT Walsheim Pro',
+                fontSize: 24,
+                color: const Color(0xff1c202e),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(36.0, 405.0),
+            child: Stack(
               children: <Widget>[
                 Transform.translate(
-                  offset: Offset(0.0, 18.0),
-                  child:
-                      // Adobe XD layer: 'name@domain.com' (text)
-                      Text(
-                    'name@domain.com',
-                    style: TextStyle(
-                      fontFamily: 'GT Walsheim Pro',
-                      fontSize: 20,
-                      color: const Color(0x1f1c202e),
-                      fontWeight: FontWeight.w700,
-                    ),
+                  offset: Offset(0.0, 5.0),
+                  child: TextField(
+                    onChanged: (value) {
+                      print("email :" + value);
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: kInputLoginTextField.copyWith(
+                        hintText: "name@domain.com"),
+                    style: kInputActiveTextField,
                     textAlign: TextAlign.left,
                   ),
                 ),
@@ -112,9 +129,7 @@ class Login_Screen extends StatelessWidget {
                 ),
                 Transform.translate(
                   offset: Offset(0.0, 52.5),
-                  child:
-                      // Adobe XD layer: 'Line 6' (shape)
-                      SvgPicture.string(
+                  child: SvgPicture.string(
                     _svg_1p6nc1,
                     allowDrawingOutsideViewBox: true,
                   ),
@@ -123,26 +138,9 @@ class Login_Screen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(36.0, 522.0),
-            child:
-                // Adobe XD layer: 'Group 5' (group)
-                Stack(
+            offset: Offset(36.0, 482.0),
+            child: Stack(
               children: <Widget>[
-                Transform.translate(
-                  offset: Offset(0.0, 18.0),
-                  child:
-                      // Adobe XD layer: '************' (text)
-                      Text(
-                    '************',
-                    style: TextStyle(
-                      fontFamily: 'GT Walsheim Pro',
-                      fontSize: 20,
-                      color: const Color(0x1f1c202e),
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
                 Transform.translate(
                   offset: Offset(0.0, -2.0),
                   child:
@@ -158,10 +156,22 @@ class Login_Screen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
+                  offset: Offset(0.0, 5.0),
+                  child: TextField(
+                    onChanged: (value) {
+                      print("password :" + value);
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    decoration:
+                        kInputLoginTextField.copyWith(hintText: "********"),
+                    style: kInputActiveTextField,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Transform.translate(
                   offset: Offset(0.0, 52.5),
-                  child:
-                      // Adobe XD layer: 'Line 6' (shape)
-                      SvgPicture.string(
+                  child: SvgPicture.string(
                     _svg_tes6cl,
                     allowDrawingOutsideViewBox: true,
                   ),
@@ -170,54 +180,8 @@ class Login_Screen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(288.0, 527.0),
-            child:
-                // Adobe XD layer: 'Group 10' (group)
-                Stack(
-              children: <Widget>[
-                // Adobe XD layer: 'Rectangle Copy' (shape)
-                Container(
-                  width: 48.0,
-                  height: 48.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: const Color(0xffcfd4e6),
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(19.0, 16.0),
-                  child:
-                      // Adobe XD layer: 'Shape' (shape)
-                      SvgPicture.string(
-                    _svg_qxo0wj,
-                    allowDrawingOutsideViewBox: true,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(130.0, 736.0),
-            child:
-                // Adobe XD layer: 'Forgot password?' (text)
-                SizedBox(
-              width: 112.0,
-              child: Text(
-                'Forgot password?',
-                style: TextStyle(
-                  fontFamily: 'GT Walsheim Pro',
-                  fontSize: 12,
-                  color: const Color(0xff1c202e),
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(177.0, 602.0),
-            child:
-                // Adobe XD layer: 'or' (text)
-                SizedBox(
+            offset: Offset(177.0, 560.0),
+            child: SizedBox(
               width: 18.0,
               child: Text(
                 'or',
@@ -230,167 +194,206 @@ class Login_Screen extends StatelessWidget {
               ),
             ),
           ),
+          Transform.translate(
+            offset: Offset(268.0, 482.0),
+            child: Stack(
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    print("Login Button");
+                  },
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: Container(
+                    padding: EdgeInsets.all(0),
+                    width: 48.0,
+                    height: 48.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: const Color(0xFFFF3378),
+                    ),
+                  ),
+                ),
+                Transform.translate(
+                  offset: Offset(39.0, 16.0),
+                  child: SvgPicture.string(
+                    _svg_qxo0wj,
+                    allowDrawingOutsideViewBox: true,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Transform(
             transform: Matrix4(-1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0,
                 0.0, 1.0, 0.0, 260.63, 156.0, 0.0, 1.0),
             child:
                 // Adobe XD layer: 'Group 64' (group)
-                Stack(
+                (
+                  child: Stack(
               children: <Widget>[
-                Transform.translate(
-                  offset: Offset(0.63, 0.0),
-                  child:
-                      // Adobe XD layer: 'Group 7' (group)
-                      Stack(
-                    children: <Widget>[
-                      // Adobe XD layer: 'Group 3' (group)
-                      Stack(
-                        children: <Widget>[
-                          Transform(
-                            transform: Matrix4(
-                                -1.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                -1.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                1.0,
-                                0.0,
-                                106.61,
-                                0.0,
-                                0.0,
-                                1.0),
-                            child:
-                                // Adobe XD layer: 'Oval' (shape)
-                                Container(
-                              width: 106.6,
-                              height: 106.9,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                    Radius.elliptical(53.3, 53.46)),
-                                color: const Color(0x1fff3378),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Transform.translate(
-                        offset: Offset(15.78, -156.53),
-                        child:
-                            // Adobe XD layer: 'Group 6' (group)
-                            Stack(
+                  Transform.translate(
+                    offset: Offset(0.63, 0.0),
+                    child: Stack(
+                      children: <Widget>[
+                        Stack(
                           children: <Widget>[
-                            Transform.translate(
-                              offset: Offset(0.54, -6.61),
+                            Transform(
+                              transform: Matrix4(
+                                  -1.0,
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  -1.0,
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  1.0,
+                                  0.0,
+                                  106.61,
+                                  0.0,
+                                  0.0,
+                                  1.0),
                               child:
-                                  // Adobe XD layer: 'Fill 4' (shape)
-                                  SvgPicture.string(
-                                _svg_8oifhl,
-                                allowDrawingOutsideViewBox: true,
+                                  // Adobe XD layer: 'Oval' (shape)
+                                  Container(
+                                width: 106.6,
+                                height: 106.9,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(
+                                      Radius.elliptical(53.3, 53.46)),
+                                  color: const Color(0x1fff3378),
+                                ),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(60.63, -154.0),
-                  child:
-                      // Adobe XD layer: 'Fill 8' (shape)
-                      SvgPicture.string(
-                    _svg_ql6ahl,
-                    allowDrawingOutsideViewBox: true,
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(35.63, -13.0),
-                  child:
-                      // Adobe XD layer: 'Group 63' (group)
-                      Stack(
-                    children: <Widget>[
-                      Transform.translate(
-                        offset: Offset(0.2, -145.45),
-                        child:
-                            // Adobe XD layer: 'Fill 9' (shape)
-                            SvgPicture.string(
-                          _svg_di5ys,
-                          allowDrawingOutsideViewBox: true,
+                        Transform.translate(
+                          offset: Offset(15.78, -156.53),
+                          child:
+                              // Adobe XD layer: 'Group 6' (group)
+                              Stack(
+                            children: <Widget>[
+                              Transform.translate(
+                                offset: Offset(0.54, -6.61),
+                                child: SvgPicture.string(
+                                  _svg_8oifhl,
+                                  allowDrawingOutsideViewBox: true,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
+                  Transform.translate(
+                    offset: Offset(60.63, -154.0),
+                    child:
+                        // Adobe XD layer: 'Fill 8' (shape)
+                        SvgPicture.string(
+                      _svg_ql6ahl,
+                      allowDrawingOutsideViewBox: true,
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: Offset(35.63, -13.0),
+                    child:
+                        // Adobe XD layer: 'Group 63' (group)
+                        Stack(
+                      children: <Widget>[
+                        Transform.translate(
+                          offset: Offset(0.2, -145.45),
+                          child:
+                              // Adobe XD layer: 'Fill 9' (shape)
+                              SvgPicture.string(
+                            _svg_di5ys,
+                            allowDrawingOutsideViewBox: true,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
               ],
             ),
+                ),
           ),
           Transform.translate(
-            offset: Offset(36.0, 372.0),
+            offset: Offset(110.0, 650.0),
             child:
-                // Adobe XD layer: 'Login to your accoun' (text)
-                Text(
-              'Login to your account',
-              style: TextStyle(
-                fontFamily: 'GT Walsheim Pro',
-                fontSize: 24,
-                color: const Color(0xff1c202e),
-                fontWeight: FontWeight.w700,
+                // Adobe XD layer: 'Forgot password?' (text)
+                SizedBox(
+              width: 150.0,
+              child: FlatButton(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                child: Text(
+                  'Forgot password?',
+                  style: TextStyle(
+                    fontFamily: 'GT Walsheim Pro',
+                    fontSize: 12,
+                    color: const Color(0xff1c202e),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  print("Forgot Password");
+                },
               ),
-              textAlign: TextAlign.left,
             ),
           ),
           Transform.translate(
-            offset: Offset(38.0, 650.0),
+            offset: Offset(38.0, 590.0),
             child:
                 // Adobe XD layer: 'Button/Regular' (group)
-                Stack(
-              children: <Widget>[
-                // Adobe XD layer: 'bg' (shape)
-                Container(
-                  width: 300.0,
-                  height: 48.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    border:
-                        Border.all(width: 1.0, color: const Color(0xff3b5998)),
+                FlatButton(
+              padding: EdgeInsets.all(0),
+              child: Stack(
+                children: <Widget>[
+                  // Adobe XD layer: 'bg' (shape)
+                  Container(
+                    width: 300.0,
+                    height: 48.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                          width: 1.0, color: const Color(0xff3b5998)),
+                    ),
                   ),
-                ),
-                Transform.translate(
-                  offset: Offset(17.54, 17.67),
-                  child:
-                      // Adobe XD layer: 'Button text' (text)
-                      SizedBox(
-                    width: 266.0,
-                    height: 18.0,
-                    child: SingleChildScrollView(
-                        child: Text(
-                      'Login with facebook',
-                      style: TextStyle(
-                        fontFamily: 'GT Walsheim Pro',
-                        fontSize: 15,
-                        color: const Color(0xff3b5998),
-                        fontWeight: FontWeight.w500,
-                        height: 0.6666666666666666,
+                  Transform.translate(
+                    offset: Offset(17.54, 20.67),
+                    child: SizedBox(
+                      width: 266.0,
+                      height: 50.0,
+                      child: Text(
+                        'Login with facebook',
+                        style: TextStyle(
+                          fontFamily: 'GT Walsheim Pro',
+                          fontSize: 15,
+                          color: const Color(0xff3b5998),
+                          fontWeight: FontWeight.w500,
+                          height: 0.6666666666666666,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    )),
+                    ),
                   ),
-                ),
-                Transform.translate(
-                  offset: Offset(23.08, 16.0),
-                  child:
-                      // Adobe XD layer: 'Shape' (shape)
-                      SvgPicture.string(
-                    _svg_bf1pue,
-                    allowDrawingOutsideViewBox: true,
+                  Transform.translate(
+                    offset: Offset(23.08, 16.0),
+                    child:
+                        // Adobe XD layer: 'Shape' (shape)
+                        SvgPicture.string(
+                      _svg_bf1pue,
+                      allowDrawingOutsideViewBox: true,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              onPressed: () {
+                print("Login With Facebook");
+              },
             ),
           ),
         ],
