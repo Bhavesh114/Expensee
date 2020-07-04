@@ -13,10 +13,8 @@ class Login_Screen extends StatelessWidget {
         children: <Widget>[
           Transform(
             transform: Matrix4(-1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0,
-                0.0, 1.0, 0.0, 375.07, 116.0, 0.0, 1.0),
-            child:
-                // Adobe XD layer: 'Bar' (shape)
-                Container(
+                0.0, 1.0, 0.0, 360.07, 116.0, 0.0, 1.0),
+            child: Container(
               width: 374.7,
               height: 116.0,
               decoration: BoxDecoration(
