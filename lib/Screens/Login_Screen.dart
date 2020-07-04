@@ -1,5 +1,4 @@
 import 'package:expensee/Constants.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,25 +7,7 @@ class Loginscreen extends StatefulWidget {
   _LoginscreenState createState() => _LoginscreenState();
 }
 
-class _LoginscreenState extends State<Loginscreen>
-    with TickerProviderStateMixin {
-  AnimationController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-      upperBound: 100,
-    );
-    controller.forward();
-
-    controller.addListener(() {
-      setState(() {});
-    });
-  }
-
+class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
