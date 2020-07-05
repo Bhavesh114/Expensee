@@ -7,13 +7,14 @@ const TextStyle kInputLoginHIntText = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
-const InputDecoration kInputLoginTextField = InputDecoration(
+const InputDecoration kInputLoginTextFieldDecoration = InputDecoration(
   hintStyle: kInputLoginHIntText,
   border: InputBorder.none,
   focusedBorder: InputBorder.none,
   enabledBorder: InputBorder.none,
   errorBorder: InputBorder.none,
   disabledBorder: InputBorder.none,
+  contentPadding: EdgeInsets.all(0),
 );
 
 const TextStyle kInputActiveTextField = TextStyle(
