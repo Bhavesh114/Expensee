@@ -226,95 +226,9 @@ class _LoginscreenState extends State<Loginscreen> {
               ],
             ),
           ),
-          Transform(
-            transform: Matrix4(-1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0,
-                0.0, 1.0, 0.0, 260.63, 156.0, 0.0, 1.0),
-            child: Stack(
-              children: <Widget>[
-                Transform.translate(
-                  offset: Offset(0.63, 0.0),
-                  child: Stack(
-                    children: <Widget>[
-                      Stack(
-                        children: <Widget>[
-                          Transform(
-                            transform: Matrix4(
-                                -1.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                -1.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                0.0,
-                                1.0,
-                                0.0,
-                                106.61,
-                                0.0,
-                                0.0,
-                                1.0),
-                            child: Container(
-                              width: 106.6,
-                              height: 106.9,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                    Radius.elliptical(53.3, 53.46)),
-                                color: const Color(0x1fff3378),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Transform.translate(
-                        offset: Offset(15.78, -156.53),
-                        child:
-                            // Adobe XD layer: 'Group 6' (group)
-                            Stack(
-                          children: <Widget>[
-                            Transform.translate(
-                              offset: Offset(0.54, -6.61),
-                              child: SvgPicture.string(
-                                _svg_8oifhl,
-                                allowDrawingOutsideViewBox: true,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(60.63, -154.0),
-                  child:
-                      // Adobe XD layer: 'Fill 8' (shape)
-                      SvgPicture.string(
-                    _svg_ql6ahl,
-                    allowDrawingOutsideViewBox: true,
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(35.63, -13.0),
-                  child:
-                      // Adobe XD layer: 'Group 63' (group)
-                      Stack(
-                    children: <Widget>[
-                      Transform.translate(
-                        offset: Offset(0.2, -145.45),
-                        child:
-                            // Adobe XD layer: 'Fill 9' (shape)
-                            SvgPicture.string(
-                          _svg_di5ys,
-                          allowDrawingOutsideViewBox: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          Transform.translate(
+            offset: Offset(20.0, 20.0),
+            child: Image.asset("loginimage.png"),
           ),
           Transform.translate(
             offset: Offset(110.0, 650.0),
