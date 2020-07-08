@@ -19,12 +19,12 @@ class _OnboardingOneState extends State<OnboardingOne> {
         pages: pages,
         skipClicked: (value) {
           print("Skip");
-          Navigator.push(
+          Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => Loginscreen()));
         },
         getStartedClicked: (value) {
           print("Get Started");
-          Navigator.push(
+          Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => Loginscreen()));
         },
       ),
