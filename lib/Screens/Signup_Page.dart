@@ -1,15 +1,15 @@
-import 'package:expensee/Screens/Signup_Page.dart';
+import 'package:expensee/Screens/Login_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expensee/Constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Loginscreen extends StatefulWidget {
+class SignUpScreen extends StatefulWidget {
   @override
-  _LoginscreenState createState() => _LoginscreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _LoginscreenState extends State<Loginscreen>
+class _SignUpScreenState extends State<SignUpScreen>
     with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class _LoginscreenState extends State<Loginscreen>
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         child: Text(
-                          'Sign Up',
+                          'Login',
                           style: TextStyle(
                             fontFamily: 'GT Walsheim Pro',
                             fontSize: 15,
@@ -73,11 +73,11 @@ class _LoginscreenState extends State<Loginscreen>
                           textAlign: TextAlign.right,
                         ),
                         onPressed: () {
-                          print("sign Up");
+                          print("Login");
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => Loginscreen(),
                             ),
                           );
                         },
@@ -91,17 +91,17 @@ class _LoginscreenState extends State<Loginscreen>
               padding: const EdgeInsets.only(top: 30.0),
               child: Image.asset(
                 "images/loginImage.png",
-                height: 200.0,
+                height: 180.0,
                 width: 200.0,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10.0, right: 90.0),
               child: Text(
-                'Login to your account',
+                'Sign up to Budget Tracker',
                 style: TextStyle(
                   fontFamily: 'GT Walsheim Pro',
-                  fontSize: 24,
+                  fontSize: 20,
                   color: const Color(0xff1c202e),
                   fontWeight: FontWeight.w700,
                 ),
@@ -109,7 +109,38 @@ class _LoginscreenState extends State<Loginscreen>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20.0, right: 290.0),
+              padding: const EdgeInsets.only(top: 20.0, right: 265.0),
+              child: Text(
+                'Your name',
+                style: TextStyle(
+                  fontFamily: 'GT Walsheim Pro',
+                  fontSize: 12,
+                  color: const Color(0xffaeb1b8),
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.only(right: 35.0, left: 19.0, bottom: 0.0),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (value) {
+                  print("name :" + value);
+                },
+                style: kInputActiveTextField,
+                decoration: kInputLoginTextFieldDecoration.copyWith(
+                    hintText: "Your name"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 35.0, left: 19.0),
+              child: Divider(
+                thickness: 1.5,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, right: 290.0),
               child: Text(
                 'Email',
                 style: TextStyle(
@@ -216,7 +247,7 @@ class _LoginscreenState extends State<Loginscreen>
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onPressed: () {
-                print("Login with FaceBook");
+                print("Sign up with FaceBook");
               },
               child: Stack(
                 children: <Widget>[
@@ -231,14 +262,12 @@ class _LoginscreenState extends State<Loginscreen>
                   ),
                   Transform.translate(
                     offset: Offset(17.54, 17.67),
-                    child:
-                        // Adobe XD layer: 'Button text' (text)
-                        SizedBox(
+                    child: SizedBox(
                       width: 266.0,
                       height: 50.0,
                       child: SingleChildScrollView(
                           child: Text(
-                        'Login with facebook',
+                        'Sign up with facebook',
                         style: TextStyle(
                           fontFamily: 'GT Walsheim Pro',
                           fontSize: 15,
@@ -260,29 +289,6 @@ class _LoginscreenState extends State<Loginscreen>
                     ),
                   ),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: FlatButton(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onPressed: () {
-                  print("Forgot Pssword");
-                },
-                child: SizedBox(
-                  width: 112.0,
-                  child: Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      fontFamily: 'GT Walsheim Pro',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
-                      color: const Color(0xff1c202e),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
               ),
             ),
           ],
