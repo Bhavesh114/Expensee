@@ -1,8 +1,12 @@
 import 'package:expensee/Screens/Signup_Page.dart';
+import 'package:expensee/services/Auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expensee/Constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'onboarding_one.dart';
 
 class Loginscreen extends StatefulWidget {
   @override
@@ -11,6 +15,11 @@ class Loginscreen extends StatefulWidget {
 
 class _LoginscreenState extends State<Loginscreen>
     with TickerProviderStateMixin {
+  String email = " ";
+  String password = " ";
+
+  final AuthServices _auth = AuthServices();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,7 +135,9 @@ class _LoginscreenState extends State<Loginscreen>
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
-                  print(value);
+                  setState(() {
+                    email = value;
+                  });
                 },
                 style: kInputActiveTextField,
                 decoration: kInputLoginTextFieldDecoration.copyWith(
@@ -162,9 +173,12 @@ class _LoginscreenState extends State<Loginscreen>
                       Padding(
                         padding: const EdgeInsets.only(left: 19.0, bottom: 0.0),
                         child: TextField(
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.visiblePassword,
+                          obscureText: true,
                           onChanged: (value) {
-                            print("password : " + value);
+                            setState(() {
+                              password = value;
+                            });
                           },
                           style: kInputActiveTextField,
                           decoration: kInputLoginTextFieldDecoration.copyWith(
@@ -185,8 +199,15 @@ class _LoginscreenState extends State<Loginscreen>
                   child: FlatButton(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    onPressed: () {
+                    onPressed: () async {
                       print("Login Button");
+                      AuthResult newUser = await _auth.signIn(email, password);
+                      if (newUser != null) {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OnboardingOne()));
+                      }
                     },
                     child: Image.asset(
                       "images/loginButton.PNG",

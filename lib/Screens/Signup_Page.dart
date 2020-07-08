@@ -1,4 +1,6 @@
 import 'package:expensee/Screens/Login_Screen.dart';
+import 'package:expensee/services/Auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expensee/Constants.dart';
@@ -11,6 +13,12 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen>
     with TickerProviderStateMixin {
+  String name = "";
+  String email = " ";
+  String password = " ";
+
+  final AuthServices _auth = AuthServices();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,7 +134,9 @@ class _SignUpScreenState extends State<SignUpScreen>
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
-                  print("name :" + value);
+                  setState(() {
+                    name = value;
+                  });
                 },
                 style: kInputActiveTextField,
                 decoration: kInputLoginTextFieldDecoration.copyWith(
@@ -157,7 +167,9 @@ class _SignUpScreenState extends State<SignUpScreen>
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
-                  print(value);
+                  setState(() {
+                    email = value;
+                  });
                 },
                 style: kInputActiveTextField,
                 decoration: kInputLoginTextFieldDecoration.copyWith(
@@ -194,8 +206,11 @@ class _SignUpScreenState extends State<SignUpScreen>
                         padding: const EdgeInsets.only(left: 19.0, bottom: 0.0),
                         child: TextField(
                           keyboardType: TextInputType.emailAddress,
+                          obscureText: true,
                           onChanged: (value) {
-                            print("password : " + value);
+                            setState(() {
+                              password = value;
+                            });
                           },
                           style: kInputActiveTextField,
                           decoration: kInputLoginTextFieldDecoration.copyWith(
@@ -216,8 +231,15 @@ class _SignUpScreenState extends State<SignUpScreen>
                   child: FlatButton(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    onPressed: () {
-                      print("Login Button");
+                    onPressed: () async {
+                      AuthResult newUser =
+                          await _auth.register(email, password);
+                      if (newUser != null) {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Loginscreen()));
+                      }
                     },
                     child: Image.asset(
                       "images/loginButton.PNG",
