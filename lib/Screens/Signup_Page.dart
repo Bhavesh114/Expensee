@@ -1,6 +1,4 @@
 import 'package:expensee/Screens/Login_Screen.dart';
-import 'package:expensee/services/Auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expensee/Constants.dart';
@@ -16,8 +14,6 @@ class _SignUpScreenState extends State<SignUpScreen>
   String name = "";
   String email = " ";
   String password = " ";
-
-  final AuthServices _auth = AuthServices();
 
   @override
   Widget build(BuildContext context) {
@@ -231,16 +227,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                   child: FlatButton(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    onPressed: () async {
-                      AuthResult newUser =
-                          await _auth.register(email, password);
-                      if (newUser != null) {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Loginscreen()));
-                      }
-                    },
+                    onPressed: () async {},
                     child: Image.asset(
                       "images/loginButton.PNG",
                       height: 70.0,
