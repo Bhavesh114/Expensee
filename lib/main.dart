@@ -1,8 +1,9 @@
-import 'package:expensee/LandingPage.dart';
+
 import 'package:expensee/services/Auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:expensee/models/user.dart';
+import 'Screens/emptyStateOne.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       value: AuthServices().user,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LandingPage(),
+        home: EmptyStateDaily(),
       ),
     );
   }
