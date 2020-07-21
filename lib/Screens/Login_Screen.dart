@@ -57,7 +57,7 @@ class _LoginscreenState extends State<Loginscreen>
                       Padding(
                         padding: const EdgeInsets.only(left: 22.0),
                         child: Text(
-                          'Budget tracker',
+                          'Expensee',
                           style: TextStyle(
                             fontFamily: 'GT Walsheim Pro',
                             fontSize: 18,
