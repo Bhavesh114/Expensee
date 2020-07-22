@@ -25,13 +25,13 @@ const TextStyle kInputActiveTextField = TextStyle(
 );
 const kHeadingStyle = TextStyle(
   fontFamily: 'GT Walsheim Pro',
-  fontSize: 24,
+  fontSize: 27,
   color: const Color(0xff1c202e),
   fontWeight: FontWeight.w700,
 );
 
 const kOnboardingTextStyle = TextStyle(
   fontFamily: 'GT Walsheim Pro',
-  fontSize: 14,
+  fontSize: 17,
   color: const Color(0x991c202e),
 );
