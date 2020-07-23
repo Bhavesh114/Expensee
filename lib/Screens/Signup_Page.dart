@@ -24,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen>
           children: <Widget>[
             Container(
               width: 374.7,
-              height: 116.0,
+              height: 80.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(23.98),
@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.only(top: 35.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,

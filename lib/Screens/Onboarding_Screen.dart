@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../LandingScreen2.dart';
 import 'Login_Screen.dart';
 
 import 'package:expensee/Constants.dart';
@@ -29,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       height: 8.0,
       width: isActive ? 10.0 : 8.0,
       decoration: BoxDecoration(
-        color: isActive ?  Color(0xffFF3378):Color(0xffe6d5de),
+        color: isActive ? Color(0xffFF3378) : Color(0xffe6d5de),
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
@@ -47,7 +48,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               height: 50.0,
             ),
             Container(
-
               height: 500.0,
               child: PageView(
                 physics: ClampingScrollPhysics(),
@@ -88,10 +88,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ? Container(
                     alignment: Alignment.center,
                     child: FlatButton(
-                      onPressed: () => Navigator.push(
+                      onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Loginscreen())),
+                              builder: (context) => LandingPage2())),
                       child: Text(
                         'Skip',
                         style: TextStyle(
@@ -105,10 +105,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 : Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 70.0),
                     child: RaisedButton(
-                      onPressed: () => Navigator.push(
+                      onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Loginscreen())),
+                              builder: (context) => LandingPage2())),
                       color: Color(0xffFF3378),
                       textColor: Colors.white,
                       padding: EdgeInsets.all(15.0),
@@ -169,4 +169,3 @@ class OnboardingWidget extends StatelessWidget {
     );
   }
 }
-
