@@ -22,6 +22,7 @@ dependencies:
   after_layout: ^1.0.7+2
   shared_preferences: ^0.5.8
   table_calendar: ^2.2.3
+  navigation_action_bar: ^0.0.1
 
 
 dev_dependencies:
