@@ -35,3 +35,9 @@ const kOnboardingTextStyle = TextStyle(
   fontSize: 17,
   color: const Color(0x991c202e),
 );
+
+const kCalendarTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+);

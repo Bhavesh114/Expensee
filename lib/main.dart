@@ -3,6 +3,7 @@ import 'package:expensee/services/Auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:expensee/models/user.dart';
+import 'Screens/DailyEmpty.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthServices().user,
       child: MaterialApp(
+
         debugShowCheckedModeBanner: false,
-        home: LandingPage(),
+        home: EmptyStateDaily(),
       ),
     );
   }
