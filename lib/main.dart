@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:expensee/models/user.dart';
 import 'Screens/DailyEmpty.dart';
+import 'BottomBar.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +17,13 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthServices().user,
       child: MaterialApp(
-
         debugShowCheckedModeBanner: false,
-        home: EmptyStateDaily(),
+        home: BottomBar(),
+        title: 'Expensee',
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
       ),
     );
   }

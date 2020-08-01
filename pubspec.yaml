@@ -23,6 +23,7 @@ dependencies:
   shared_preferences: ^0.5.8
   table_calendar: ^2.2.3
   navigation_action_bar: ^0.0.1
+  persistent_bottom_nav_bar: ^2.0.5
 
 
 dev_dependencies:
