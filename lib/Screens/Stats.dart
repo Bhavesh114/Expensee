@@ -43,6 +43,7 @@ class _StatisticState extends State<Statistic> {
                   ),
                   formatButtonTextStyle: TextStyle(color: Colors.black),
                   formatButtonShowsNext: false,
+                  //formatButtonVisible: false,
                 ),
                 startingDayOfWeek: StartingDayOfWeek.monday,
                 onDaySelected: (date, events) {
@@ -57,6 +58,7 @@ class _StatisticState extends State<Statistic> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Text(
+
                       date.day.toString(),
                       style: TextStyle(
                         color: Colors.white,
@@ -69,6 +71,16 @@ class _StatisticState extends State<Statistic> {
             ),
             decoration: kboxDecoration,
           ), //Table Calendar
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 55.0),
+            child: Text(
+              'No Statistics to Show',
+              style: TextStyle(color: Colors.grey,fontSize: 25.0),
+            ),
+          ),
+          Container(
+            child: Image.asset('images/StatsEmpty.png'),
+          ),
         ],
       ),
     );

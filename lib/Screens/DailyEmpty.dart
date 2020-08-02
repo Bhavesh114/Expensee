@@ -46,6 +46,7 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
                   ),
                   formatButtonTextStyle: TextStyle(color: Colors.black),
                   formatButtonShowsNext: false,
+                  //formatButtonVisible: false,
                 ),
                 startingDayOfWeek: StartingDayOfWeek.monday,
                 onDaySelected: (date, events) {
@@ -72,6 +73,16 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
             ),
             decoration: kboxDecoration,
           ), //Table Calendar
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 50.0),
+            child: Text(
+              'No Transaction',
+              style: TextStyle(color: Colors.grey,fontSize: 25.0),
+            ),
+          ),
+          Container(
+            child: Image.asset('images/DailyEmpty.png'),
+          ),
         ],
       ),
     );
@@ -100,3 +111,4 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
 //        ));
   }
 }
+
