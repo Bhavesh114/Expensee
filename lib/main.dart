@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       value: AuthServices().user,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BottomBar(),
+        home: LandingPage(),
         title: 'Expensee',
         theme: ThemeData(
           primarySwatch: Colors.pink,
