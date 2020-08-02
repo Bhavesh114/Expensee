@@ -24,9 +24,6 @@ class _StatisticState extends State<Statistic> {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
-
     return Scaffold(
       backgroundColor: Color(0xffFCFCFC),
       body: Column(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../LandingScreen2.dart';
-import 'Login_Screen.dart';
 
 import 'package:expensee/Constants.dart';
 
