@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       value: AuthServices().user,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Lm Suite App',
+        title: 'Expensee',
         theme: ThemeData(
           primarySwatch: Colors.pink,
           visualDensity: VisualDensity.adaptivePlatformDensity,
