@@ -44,10 +44,10 @@ const kboxDecoration = BoxDecoration(
     bottomRight: Radius.circular(35.97),
     bottomLeft: Radius.circular(35.97),
   ),
-  color: const Color(0xffffffff),
+  color: const Color(0xfff2f2f2),
   boxShadow: [
     BoxShadow(
-      color: const Color(0x0a000000),
+      color: Color(0xffb5b5b5),
       offset: Offset(0, 8),
       blurRadius: 24,
     ),

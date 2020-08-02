@@ -76,7 +76,10 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
             padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 50.0),
             child: Text(
               'No Transaction',
-              style: TextStyle(color: Colors.grey,fontSize: 25.0),
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Container(
@@ -110,4 +113,3 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
 //        ));
   }
 }
-

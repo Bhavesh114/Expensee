@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:expensee/Constants.dart';
+
 class Statistic extends StatefulWidget {
   @override
   _StatisticState createState() => _StatisticState();
@@ -58,7 +59,6 @@ class _StatisticState extends State<Statistic> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Text(
-
                       date.day.toString(),
                       style: TextStyle(
                         color: Colors.white,
@@ -75,7 +75,10 @@ class _StatisticState extends State<Statistic> {
             padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 55.0),
             child: Text(
               'No Statistics to Show',
-              style: TextStyle(color: Colors.grey,fontSize: 25.0),
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Container(
