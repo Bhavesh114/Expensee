@@ -4,13 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
-import 'package:expensee/Screens/home.dart';
-import 'package:expensee/Screens/Login_Screen.dart';
-import 'package:provider/provider.dart';
-import 'Screens/Login_Screen.dart';
-import 'package:expensee/models/user.dart';
-
-import 'Screens/Onboarding_Screen.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -38,11 +31,11 @@ class _LandingPageState extends State<LandingPage>
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context);
-
-    if (user == null)
-      return Loginscreen();
-    else
-      return OnboardingScreen();
+    return Scaffold(
+      backgroundColor: Color(0xFFff3378),
+      body: Center(
+        child: null,
+      ),
+    );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:expensee/BottomBar.dart';
 import 'package:expensee/Constants.dart';
 
 class EmptyStateDaily extends StatefulWidget {
@@ -25,9 +24,6 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
-
     return Scaffold(
       backgroundColor: Color(0xffFCFCFC),
       body: Column(
@@ -88,28 +84,5 @@ class _EmptyStateDailyState extends State<EmptyStateDaily> {
         ],
       ),
     );
-//        bottomNavigationBar: NavigationActionBar(
-//          context: context,
-//          scaffoldColor: Color(0xffff3378),
-//          index: 0,
-//          subItems: [
-//            NavBarItem(iconData: Icons.arrow_downward, size: 25),
-//            NavBarItem(iconData: Icons.arrow_upward, size: 25),
-//          ],
-//          mainIndex: 2,
-//          items: [
-//            NavBarItem(iconData: Icons.calendar_today, size: 30),
-//            NavBarItem(iconData: Icons.insert_chart, size: 30),
-//            NavBarItem(iconData: Icons.add, size: 40),
-//            NavBarItem(iconData: Icons.account_balance_wallet, size: 30),
-//            NavBarItem(iconData: Icons.person_outline, size: 30),
-//          ],
-//          onTap: (index) {
-//            setState(() {
-//              currentIndex = index;
-//              print(currentIndex);
-//            });
-//          },
-//        ));
   }
 }
