@@ -7,6 +7,7 @@ import 'package:expensee/models/user.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
+import 'BottomBar.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -39,6 +40,6 @@ class _LandingPageState extends State<LandingPage>
     if (user == null)
       return Loginscreen();
     else
-      return EmptyStateDaily();
+      return BottomBar();
   }
 }
