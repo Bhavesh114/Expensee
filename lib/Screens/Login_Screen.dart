@@ -205,16 +205,17 @@ class _LoginscreenState extends State<Loginscreen>
                       setState(() {
                         spinner = true;
                       });
-                      Future.delayed(const Duration(seconds: 5), () {
-                        setState(() {
-                          spinner = false;
-                        });
-                      });
                       print("Login Button");
                       dynamic result = await _auth.signIn(email, password);
                       if (result == null) {
+                        setState(() {
+                          spinner = false;
+                        });
                         print("error signing in");
                       } else {
+                        setState(() {
+                          spinner = false;
+                        });
                         print("signed in");
                         print(result.uid);
                       }
