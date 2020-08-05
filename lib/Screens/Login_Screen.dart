@@ -23,13 +23,14 @@ class _LoginscreenState extends State<Loginscreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: Color(0xffffffff),
       body: ModalProgressHUD(
         inAsyncCall: spinner,
         child: Column(
           children: <Widget>[
             Container(
-              width: 374.7,
+              width: MediaQuery.of(context).size.width,
               height: 80.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -50,11 +51,11 @@ class _LoginscreenState extends State<Loginscreen>
               child: Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 22.0),
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: Text(
                         'Expensee',
                         style: TextStyle(
@@ -69,7 +70,7 @@ class _LoginscreenState extends State<Loginscreen>
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 160.0),
+                      padding: const EdgeInsets.only(right: 20.0),
                       child: FlatButton(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
@@ -105,8 +106,7 @@ class _LoginscreenState extends State<Loginscreen>
                 width: 200.0,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, right: 90.0),
+            Center(
               child: Text(
                 'Login to your account',
                 style: TextStyle(
@@ -118,17 +118,24 @@ class _LoginscreenState extends State<Loginscreen>
                 textAlign: TextAlign.left,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0, right: 290.0),
-              child: Text(
-                'Email',
-                style: TextStyle(
-                  fontFamily: 'GT Walsheim Pro',
-                  fontSize: 12,
-                  color: const Color(0xffaeb1b8),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 19.0),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(
+                      fontFamily: 'GT Walsheim Pro',
+                      fontSize: 12,
+                      color: const Color(0xffaeb1b8),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
-                textAlign: TextAlign.left,
-              ),
+              ],
             ),
             Padding(
               padding:
@@ -299,7 +306,7 @@ class _LoginscreenState extends State<Loginscreen>
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onPressed: () {
-                  print("Forgot Pssword");
+                  print("Forgot Pasword");
                 },
                 child: SizedBox(
                   width: 112.0,
